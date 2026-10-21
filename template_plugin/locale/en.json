@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Sampling Temperature",
+    "description": "Adds a compact temperature control to the composer so each model request in the session can use its own temperature, with presets, a slider, and a reset to the model default."
+  }
+}

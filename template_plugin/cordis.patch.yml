@@ -1,0 +1,3 @@
+- insert:
+    - id: temperature-control
+      name: '@local/temperature-control'
