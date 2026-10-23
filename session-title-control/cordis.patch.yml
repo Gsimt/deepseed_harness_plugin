@@ -1,0 +1,20 @@
+# 会话标题：把内置的首问 provider 换成带重试的实现，并启用「重排标题」按钮与 /retitle 命令。
+# 这是组合包自带的 patch 层，安装后自动生效；用户仍可在 profile 层用
+#   - id: session-title-control
+#     config: { ... }
+# 覆盖下面的默认值。
+- id: session-title-llm
+  disabled: true
+
+- insert:
+    - id: session-title-control
+      name: '@local/session-title-control'
+      config:
+        targetWords: 5
+        targetCjkCharacters: 10
+        maxInputBytes: 16384
+        maxOutputTokens: 4096
+        timeoutMs: 30000
+        maxAttempts: 5
+        retryBaseDelayMs: 500
+        retryMaxDelayMs: 8000
